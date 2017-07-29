@@ -13,9 +13,11 @@
 		B64B357B1F2D262400F4DAD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64B357A1F2D262400F4DAD7 /* Assets.xcassets */; };
 		B64B357E1F2D262400F4DAD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64B357C1F2D262400F4DAD7 /* LaunchScreen.storyboard */; };
 		B64B35881F2D3CC700F4DAD7 /* AnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B35871F2D3CC700F4DAD7 /* AnalyzeViewController.swift */; };
+		CBF4C5725B8BCEFB24EAE579 /* Pods_greenermobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AF8DD1D0777B0AB1F435 /* Pods_greenermobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C408DE70F1DFAF5FF929C5E /* Pods-greenermobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-greenermobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-greenermobile/Pods-greenermobile.release.xcconfig"; sourceTree = "<group>"; };
 		B64B35701F2D262400F4DAD7 /* greenermobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = greenermobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64B35731F2D262400F4DAD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B64B35751F2D262400F4DAD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +26,8 @@
 		B64B357D1F2D262400F4DAD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B64B357F1F2D262400F4DAD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B64B35871F2D3CC700F4DAD7 /* AnalyzeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyzeViewController.swift; sourceTree = "<group>"; };
+		BAA0AF8DD1D0777B0AB1F435 /* Pods_greenermobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_greenermobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7388DCCC9379D5735741290 /* Pods-greenermobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-greenermobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-greenermobile/Pods-greenermobile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF4C5725B8BCEFB24EAE579 /* Pods_greenermobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		679FA65CA8D938F5D9B6A241 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAA0AF8DD1D0777B0AB1F435 /* Pods_greenermobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B64B35671F2D262400F4DAD7 = {
 			isa = PBXGroup;
 			children = (
 				B64B35721F2D262400F4DAD7 /* greenermobile */,
 				B64B35711F2D262400F4DAD7 /* Products */,
+				FED29083F745EA21A247BCDE /* Pods */,
+				679FA65CA8D938F5D9B6A241 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +82,15 @@
 			path = greenermobile;
 			sourceTree = "<group>";
 		};
+		FED29083F745EA21A247BCDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7388DCCC9379D5735741290 /* Pods-greenermobile.debug.xcconfig */,
+				0C408DE70F1DFAF5FF929C5E /* Pods-greenermobile.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B64B35821F2D262400F4DAD7 /* Build configuration list for PBXNativeTarget "greenermobile" */;
 			buildPhases = (
+				A7F92D8E2A150342E2ADE928 /* [CP] Check Pods Manifest.lock */,
 				B64B356C1F2D262400F4DAD7 /* Sources */,
 				B64B356D1F2D262400F4DAD7 /* Frameworks */,
 				B64B356E1F2D262400F4DAD7 /* Resources */,
+				D72C9ABFCFEE91E2003551DF /* [CP] Embed Pods Frameworks */,
+				655778899D2C462E84228501 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,6 +161,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		655778899D2C462E84228501 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-greenermobile/Pods-greenermobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7F92D8E2A150342E2ADE928 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D72C9ABFCFEE91E2003551DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-greenermobile/Pods-greenermobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B64B356C1F2D262400F4DAD7 /* Sources */ = {
@@ -263,6 +338,7 @@
 		};
 		B64B35831F2D262400F4DAD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7388DCCC9379D5735741290 /* Pods-greenermobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A8YXHYB3NK;
@@ -276,6 +352,7 @@
 		};
 		B64B35841F2D262400F4DAD7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C408DE70F1DFAF5FF929C5E /* Pods-greenermobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A8YXHYB3NK;
