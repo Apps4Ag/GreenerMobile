@@ -26,6 +26,10 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Greener needs your camera to help you diagnose plant problems</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Greener needs your photo library to help you diagnose plant problems</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
