@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AnalyzeViewController: UIViewController {
     
@@ -17,61 +18,41 @@ class AnalyzeViewController: UIViewController {
         if (ViewController.plantImage != nil) {
             print(ViewController.plantImage.description)
             
-            let urlString = URL(string: "https://tranquil-hollows-94349.herokuapp.com/api/image")
+//            let imageurl = "https://storage.googleapis.com/appsforag/gardenia_bad/DSC_0001.JPG"
+            let apiUrl = URL(string: "https://tranquil-hollows-94349.herokuapp.com/api/image")
             
-            let session = URLSession.shared
-            let request = NSMutableURLRequest(url: urlString!)
-            request.httpMethod = "POST"
-            request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
+            let imageData = UIImageJPEGRepresentation(ViewController.plantImage, 1.0)!
             
-            let task = session.dataTask(with: request as URLRequest) { (data, response, error) in
-                guard let _: Data = data, let _: URLResponse = response, error == nil else {
-                    print("*****error")
-                    return
-                }
-                let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                print("*****This is the data: \(dataString)") //JSONSerialization
+            Alamofire.upload(
+                multipartFormData: { multipartFormData in
+                    multipartFormData.append(imageData, withName: "file")
+                    multipartFormData.append("upload.JPG".data(using: .utf8)!, withName: "filename")
+                },
+                usingThreshold: SessionManager.multipartFormDataEncodingMemoryThreshold,
+                to: apiUrl!,
+                method: .post,
+                encodingCompletion: { encodingResult in
+                    switch encodingResult {
+                    case .success(let upload, _, _):
+                        upload.responseJSON { response in
+                            debugPrint(response)
+                        }
+                    case .failure(let encodingError):
+                        print(encodingError)
+                    }
             }
-            
-            task.resume()
-        }
+            )
+            // Use Alamofire to upload the image
+//            Alamofire.upload(imageData, to: urlString!).responseJSON { response in
+//                debugPrint(response)
+//            }
         // Do any additional setup after loading the view, typically from a nib.
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
-        let body = NSMutableData();
-        
-        if parameters != nil {
-            for (key, value) in parameters! {
-                body.append(NSString("test"))
-                body.appendString("--\(boundary)\r\n")
-                body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
-                body.appendString("\(value)\r\n")
-            }
-        }
-        
-        let filename = "user-profile.jpg"
-        
-        let mimetype = "image/jpg"
-        
-        body.appendString("--\(boundary)\r\n")
-        body.appendString("Content-Disposition: form-data; name=\"\(filePathKey!)\"; filename=\"\(filename)\"\r\n")
-        body.appendString("Content-Type: \(mimetype)\r\n\r\n")
-        body.appendData(imageDataKey)
-        body.appendString("\r\n")
-        
-        body.appendString("--\(boundary)--\r\n")
-        
-        return body
-    }
-    
-    func generateBoundaryString() -> String {
-        return "Boundary-\(NSUUID().UUIDString)"
     }
 }
 
