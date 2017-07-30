@@ -278,6 +278,7 @@
                         <outlet property="lblDiagnosis" destination="drm-ba-JwW" id="zsS-S7-Lvp"/>
                         <outlet property="lblLatinName" destination="oY9-s2-r3t" id="XpR-Uz-Mgy"/>
                         <outlet property="lblPlantName" destination="CLo-Qh-L2c" id="aB4-ep-Xzy"/>
+                        <outlet property="txtDescription" destination="Lwc-hD-wnx" id="Kg7-Uy-jve"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6N-RI-qEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
