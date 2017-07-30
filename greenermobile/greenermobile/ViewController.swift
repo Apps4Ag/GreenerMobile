@@ -27,7 +27,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     static var plantImage: UIImage!
     static var plantResult: ResultDetail = ResultDetail()
     
-    let myImages = ["acp","strawberry","insta_photo","insta_photo"]
+    let myImages = ["acp","strawberry","powderymildew","strawberry"]
     
     var imagePicker: UIImagePickerController!
         
@@ -80,7 +80,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             ViewController.plantResult = ResultDetail(diagnosis: "Botrytis Fruit Rot", plantName: "Strawberry", latinName: "Fragaria × ananassa")
             ViewController.plantImage = UIImage(named: "strawberry")
         case 2:
-            ViewController.plantResult = ResultDetail(diagnosis: "Rot something", plantName: "Strawberry", latinName: "Stawbericus Maximus")
+            ViewController.plantResult = ResultDetail(diagnosis: "Powdery Mildew", plantName: "Strawberry", latinName: "Fragaria × ananassa")
         case 3:
             ViewController.plantResult = ResultDetail(diagnosis: "Rot something", plantName: "Strawberry", latinName: "Stawbericus Maximus")
         default:
