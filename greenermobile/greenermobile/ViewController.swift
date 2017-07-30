@@ -34,6 +34,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sleep(1)
         // Do any additional setup after loading the view, typically from a nib.
         
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "greener_logo"))

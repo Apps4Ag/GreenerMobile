@@ -13,9 +13,10 @@
         <scene sceneID="30d-t0-Aw3">
             <objects>
                 <navigationController id="MVk-77-dB6" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4fg-KL-HYb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorImage="back_arrow" id="4fg-KL-HYb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.32549019607843138" green="0.72549019607843135" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1Fs-2z-tW2"/>
@@ -341,6 +342,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="back_arrow" width="11" height="20"/>
         <image name="insta_photo" width="375" height="213"/>
     </resources>
     <inferredMetricsTieBreakers>
