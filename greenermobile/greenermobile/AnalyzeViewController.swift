@@ -23,9 +23,9 @@ class AnalyzeViewController: UIViewController {
             
             let imageData = UIImageJPEGRepresentation(ViewController.plantImage, 1.0)!
             
-            let headers: HTTPHeaders = [
-                "Content-Type": "",
-            ]
+//            let headers: HTTPHeaders = [
+//                "Content-Type": "",
+//            ]
             
             Alamofire.upload(
                 multipartFormData: { multipartFormData in
@@ -35,7 +35,7 @@ class AnalyzeViewController: UIViewController {
                 usingThreshold: SessionManager.multipartFormDataEncodingMemoryThreshold,
                 to: apiUrl!,
                 method: .post,
-                headers: headers,
+//                headers: headers,
                 encodingCompletion: { encodingResult in
                     switch encodingResult {
                     case .success(let upload, _, _):
