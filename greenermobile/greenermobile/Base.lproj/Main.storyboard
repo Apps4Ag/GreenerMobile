@@ -45,11 +45,16 @@
                                     <action selector="takePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b4Q-Vn-oL5"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDd-cx-CX9">
+                                <rect key="frame" x="0.0" y="285" width="375" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="L2W-DD-evZ"/>
                     <connections>
+                        <outlet property="scrollSolutions" destination="eDd-cx-CX9" id="CDq-JJ-ybf"/>
                         <segue destination="rXt-cj-pdv" kind="show" identifier="segueProgress" id="7sz-Np-Lm5"/>
                     </connections>
                 </viewController>

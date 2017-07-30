@@ -16,6 +16,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // padding 16
+        let myImages = ["insta_photo","insta_photo","insta_photo","insta_photo"]
+        let imageWidth:CGFloat = 118
+        let imageHeight:CGFloat = 157
+        var xPosition:CGFloat = 0
+        var scrollViewSize:CGFloat=0
+        
+        for image in myImages {
+            let myImage:UIImage = UIImage(named: image)!
+
+            let btn = UIButton()
+            btn.setImage(myImage, for: .normal)
+
+            btn.frame.size.width = imageWidth
+            btn.frame.size.height = imageHeight
+            btn.frame.origin.x = xPosition + 16
+            btn.frame.origin.y = 10
+            
+            scrollSolutions.addSubview(btn)
+            xPosition += imageWidth + 16
+            scrollViewSize += imageWidth
+        }
+        scrollSolutions.contentSize = CGSize(width: scrollViewSize, height: imageHeight)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,5 +81,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
 
+    @IBOutlet weak var scrollSolutions: UIScrollView!
 }
 
