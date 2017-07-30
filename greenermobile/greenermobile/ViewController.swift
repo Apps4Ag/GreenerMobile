@@ -15,7 +15,7 @@ class ResultDetail {
         self.diagnosis = diagnosis
         self.plantName = plantName
         self.latinName = latinName
-        ViewController.plantImage = UIImage(named: "insta_photo")
+        ViewController.plantImage = UIImage(named: "strawberry")
     }
 
     var diagnosis: String = "Root Rot"
@@ -27,7 +27,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     static var plantImage: UIImage!
     static var plantResult: ResultDetail = ResultDetail()
     
-    let myImages = ["insta_photo","insta_photo","insta_photo","insta_photo"]
+    let myImages = ["acp","strawberry","insta_photo","insta_photo"]
     
     var imagePicker: UIImagePickerController!
         
@@ -50,6 +50,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let btn = UIButton()
             btn.tag = index
             btn.setImage(myImage, for: .normal)
+            btn.imageView?.contentMode = .scaleAspectFill
             btn.frame.size.width = imageWidth
             btn.frame.size.height = imageHeight
             btn.frame.origin.x = xPosition + padding
@@ -73,9 +74,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         switch sender.tag {
         case 0:
-            ViewController.plantResult = ResultDetail(diagnosis: "Citrus Canker", plantName: "Citrus", latinName: "Citricus")
+            ViewController.plantResult = ResultDetail(diagnosis: "Asian Citrus Psyllid", plantName: "Citrus", latinName: "Citreae")
+            ViewController.plantImage = UIImage(named: "acp")
         case 1:
-            ViewController.plantResult = ResultDetail(diagnosis: "Rot something", plantName: "Strawberry", latinName: "Stawbericus Maximus")
+            ViewController.plantResult = ResultDetail(diagnosis: "Botrytis Fruit Rot", plantName: "Strawberry", latinName: "Fragaria × ananassa")
+            ViewController.plantImage = UIImage(named: "strawberry")
         case 2:
             ViewController.plantResult = ResultDetail(diagnosis: "Rot something", plantName: "Strawberry", latinName: "Stawbericus Maximus")
         case 3:
