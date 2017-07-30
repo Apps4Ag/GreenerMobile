@@ -13,6 +13,7 @@
 		B64B357B1F2D262400F4DAD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64B357A1F2D262400F4DAD7 /* Assets.xcassets */; };
 		B64B357E1F2D262400F4DAD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B64B357C1F2D262400F4DAD7 /* LaunchScreen.storyboard */; };
 		B64B35881F2D3CC700F4DAD7 /* AnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64B35871F2D3CC700F4DAD7 /* AnalyzeViewController.swift */; };
+		B66F72071F2D67860023BFB7 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66F72061F2D67860023BFB7 /* ResultViewController.swift */; };
 		CBF4C5725B8BCEFB24EAE579 /* Pods_greenermobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA0AF8DD1D0777B0AB1F435 /* Pods_greenermobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		B64B357D1F2D262400F4DAD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B64B357F1F2D262400F4DAD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B64B35871F2D3CC700F4DAD7 /* AnalyzeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyzeViewController.swift; sourceTree = "<group>"; };
+		B66F72061F2D67860023BFB7 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		BAA0AF8DD1D0777B0AB1F435 /* Pods_greenermobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_greenermobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7388DCCC9379D5735741290 /* Pods-greenermobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-greenermobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-greenermobile/Pods-greenermobile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				B64B357C1F2D262400F4DAD7 /* LaunchScreen.storyboard */,
 				B64B357F1F2D262400F4DAD7 /* Info.plist */,
 				B64B35871F2D3CC700F4DAD7 /* AnalyzeViewController.swift */,
+				B66F72061F2D67860023BFB7 /* ResultViewController.swift */,
 			);
 			path = greenermobile;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				B64B35761F2D262400F4DAD7 /* ViewController.swift in Sources */,
 				B64B35741F2D262400F4DAD7 /* AppDelegate.swift in Sources */,
 				B64B35881F2D3CC700F4DAD7 /* AnalyzeViewController.swift in Sources */,
+				B66F72071F2D67860023BFB7 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +387,7 @@
 				B64B35841F2D262400F4DAD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

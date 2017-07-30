@@ -8,8 +8,15 @@
 
 import UIKit
 
+class ResultDetail {
+    var diagnosis: String = "Root Rot"
+    var plantName: String = "Tomato"
+    var latinName: String = "Tomatus Plantus"
+}
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     static var plantImage: UIImage!
+    static var plantResult: ResultDetail = ResultDetail()
     
     var imagePicker: UIImagePickerController!
         
@@ -17,6 +24,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+//        ViewController.plantResult = ResultDetail()
+        
         let padding = CGFloat(16)
         let myImages = ["insta_photo","insta_photo","insta_photo","insta_photo"]
         let imageWidth:CGFloat = 118
@@ -45,7 +54,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imageTap() {
-        print("scroll image tap")
+        self.performSegue(withIdentifier: "segueResults", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

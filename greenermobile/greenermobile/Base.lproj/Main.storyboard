@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="930" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="y2I-YW-eSj">
             <objects>
-                <viewController id="xAy-i6-6hc" sceneMemberID="viewController">
+                <viewController id="xAy-i6-6hc" customClass="ResultViewController" customModule="greenermobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bsz-Rp-848"/>
                         <viewControllerLayoutGuide type="bottom" id="Pmr-TX-zL2"/>
@@ -207,6 +207,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imgResultPhoto" destination="jdA-Mj-P2c" id="7IQ-iV-UiK"/>
+                        <outlet property="lblDate" destination="ko3-kA-wTA" id="K7R-lQ-Xfq"/>
+                        <outlet property="lblDateTaken" destination="oQv-pa-xvE" id="KN9-oV-zT8"/>
+                        <outlet property="lblDiagnosis" destination="drm-ba-JwW" id="zsS-S7-Lvp"/>
+                        <outlet property="lblLatinName" destination="oY9-s2-r3t" id="XpR-Uz-Mgy"/>
+                        <outlet property="lblPlantName" destination="CLo-Qh-L2c" id="aB4-ep-Xzy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6N-RI-qEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
