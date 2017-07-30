@@ -9,6 +9,15 @@
 import UIKit
 
 class ResultDetail {
+    init() {}
+
+    init(diagnosis: String, plantName: String, latinName: String) {
+        self.diagnosis = diagnosis
+        self.plantName = plantName
+        self.latinName = latinName
+        ViewController.plantImage = UIImage(named: "insta_photo")
+    }
+
     var diagnosis: String = "Root Rot"
     var plantName: String = "Tomato"
     var latinName: String = "Tomatus Plantus"
@@ -18,25 +27,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     static var plantImage: UIImage!
     static var plantResult: ResultDetail = ResultDetail()
     
+    let myImages = ["insta_photo","insta_photo","insta_photo","insta_photo"]
+    
     var imagePicker: UIImagePickerController!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-//        ViewController.plantResult = ResultDetail()
         
         let padding = CGFloat(16)
-        let myImages = ["insta_photo","insta_photo","insta_photo","insta_photo"]
         let imageWidth:CGFloat = 118
         let imageHeight:CGFloat = 157
         var xPosition:CGFloat = 0
         var scrollViewSize:CGFloat=0
-        
-        for image in myImages {
+
+        var index = 0
+        for image in self.myImages {
             let myImage:UIImage = UIImage(named: image)!
 
             let btn = UIButton()
+            btn.tag = index
             btn.setImage(myImage, for: .normal)
             btn.frame.size.width = imageWidth
             btn.frame.size.height = imageHeight
@@ -48,12 +58,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             scrollSolutions.addSubview(btn)
             xPosition += imageWidth + padding
             scrollViewSize += imageWidth
+            
+            index = index + 1
         }
         scrollSolutions.contentSize = CGSize(width: scrollViewSize, height: imageHeight)
         
     }
     
-    func imageTap() {
+    func imageTap(sender: UIButton) {
+        print(sender.tag)
+        print(self.myImages[sender.tag])
+        
+        switch sender.tag {
+        case 0:
+            ViewController.plantResult = ResultDetail(diagnosis: "Citrus Canker", plantName: "Citrus", latinName: "Citricus")
+        case 1:
+            ViewController.plantResult = ResultDetail(diagnosis: "Rot something", plantName: "Strawberry", latinName: "Stawbericus Maximus")
+        case 2:
+            ViewController.plantResult = ResultDetail(diagnosis: "Rot something", plantName: "Strawberry", latinName: "Stawbericus Maximus")
+        case 3:
+            ViewController.plantResult = ResultDetail(diagnosis: "Rot something", plantName: "Strawberry", latinName: "Stawbericus Maximus")
+        default:
+            ViewController.plantResult = ResultDetail()
+        }
+    
         self.performSegue(withIdentifier: "segueResults", sender: self)
     }
 

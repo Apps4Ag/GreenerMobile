@@ -19,6 +19,10 @@ class ResultViewController: UIViewController {
         if ((loadingScreen != nil) && loadingScreen is AnalyzeViewController) {
             self.navigationController?.viewControllers.remove(at: 1)
         }
+        
+        if (ViewController.plantImage != nil) {
+            imgResultPhoto.image = ViewController.plantImage
+        }
 
         let result = ViewController.plantResult
         

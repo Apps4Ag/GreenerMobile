@@ -129,9 +129,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="insta_photo" translatesAutoresizingMaskIntoConstraints="NO" id="jdA-Mj-P2c">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdA-Mj-P2c">
                                 <rect key="frame" x="0.0" y="64" width="375" height="213"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="213" id="HlM-fB-gkt"/>
+                                    <constraint firstAttribute="width" constant="375" id="PPZ-l8-b05"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCi-bq-GKJ">
                                 <rect key="frame" x="0.0" y="294" width="375" height="21"/>
@@ -255,6 +258,7 @@
                                         <attributes>
                                             <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -262,6 +266,10 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jdA-Mj-P2c" firstAttribute="top" secondItem="Bsz-Rp-848" secondAttribute="bottom" id="3KV-0q-mZ9"/>
+                            <constraint firstItem="jdA-Mj-P2c" firstAttribute="centerX" secondItem="Nl5-v8-pkK" secondAttribute="centerX" id="rha-8H-VCQ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imgResultPhoto" destination="jdA-Mj-P2c" id="7IQ-iV-UiK"/>
