@@ -13,6 +13,8 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "greener_logo"))
+
         // remove loading screen from hierarchy if
         let loadingScreen = self.navigationController?.viewControllers[1]
 

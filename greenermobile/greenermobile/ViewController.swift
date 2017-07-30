@@ -35,6 +35,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "greener_logo"))
+        
         let padding = CGFloat(16)
         let imageWidth:CGFloat = 118
         let imageHeight:CGFloat = 157
