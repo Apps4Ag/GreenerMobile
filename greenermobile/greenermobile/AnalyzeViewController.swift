@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class AnalyzeViewController: UIViewController {
     
@@ -19,19 +20,14 @@ class AnalyzeViewController: UIViewController {
             print(ViewController.plantImage.description)
             
 //            let imageurl = "https://storage.googleapis.com/appsforag/gardenia_bad/DSC_0001.JPG"
-//            let apiUrl = URL(string: "https://tranquil-hollows-94349.herokuapp.com/api/image")
-            let apiUrl = URL(string: "https://tranquil--hollows--94349-herokuapp-com-c9u13my920ue.runscope.net/api/image")
+            let apiUrl = URL(string: "https://tranquil-hollows-94349.herokuapp.com/api/image")
+//            let apiUrl = URL(string: "https://tranquil--hollows--94349-herokuapp-com-c9u13my920ue.runscope.net/api/image")
             
             let imageData = resizeImage(image: ViewController.plantImage)
-            //let imageData = UIImageJPEGRepresentation(ViewController.plantImage, 0.25)!
-            
-//            let headers: HTTPHeaders = [
-//                "Content-Type": "",
-//            ]
             
             Alamofire.upload(
                 multipartFormData: { multipartFormData in
-                    multipartFormData.append(imageData, withName: "file")
+                    multipartFormData.append(imageData, withName: "file", fileName: "upload.JPG", mimeType: "application/jpeg")
                     multipartFormData.append("upload.JPG".data(using: .utf8)!, withName: "filename")
                 },
                 usingThreshold: SessionManager.multipartFormDataEncodingMemoryThreshold,
@@ -42,18 +38,19 @@ class AnalyzeViewController: UIViewController {
                     switch encodingResult {
                     case .success(let upload, _, _):
                         upload.responseJSON { response in
-                            debugPrint(response)
+                            let jsonResults = JSON(data: response.data!)
+                            let bestMatch = jsonResults[0]["label"]
+
+                            ViewController.plantResult.diagnosis = String(describing: bestMatch)
+                            // best match is match describing which label the model evaluated
+                            debugPrint(String(describing: bestMatch))
+                            
+                            self.performSegue(withIdentifier: "segueAnalyzeResults", sender: self)
                         }
                     case .failure(let encodingError):
                         print(encodingError)
                     }
-            }
-            )
-            // Use Alamofire to upload the image
-//            Alamofire.upload(imageData, to: urlString!).responseJSON { response in
-//                debugPrint(response)
-//            }
-        // Do any additional setup after loading the view, typically from a nib.
+            })
         }
     }
     
@@ -66,7 +63,7 @@ class AnalyzeViewController: UIViewController {
     let maxWidth = CGFloat(300.0);
     var imgRatio = actualWidth/actualHeight;
     let maxRatio = maxWidth/maxHeight;
-    let compressionQuality = CGFloat(0.5);//50 percent compression
+    let compressionQuality = CGFloat(1.0); // TODO: what compression
     
     if (actualHeight > maxHeight || actualWidth > maxWidth)
     {

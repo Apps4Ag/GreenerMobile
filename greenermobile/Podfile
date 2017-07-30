@@ -7,5 +7,6 @@ target 'greenermobile' do
 
   # Pods for greenermobile
   pod 'Alamofire', '~> 4.4'
-
+  pod 'SwiftyJSON'
+  
 end
